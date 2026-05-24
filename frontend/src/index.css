@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --color-background: #f8fafc; /* Slate 50 */
+    --color-surface: #ffffff; /* White */
+    --color-surface-highlight: #f1f5f9; /* Slate 100 */
+    --color-surface-border: #e2e8f0; /* Slate 200 */
+    
+    --color-content: #0f172a; /* Slate 900 */
+    --color-content-muted: #64748b; /* Slate 500 */
+    
+    --color-primary: #6366f1; /* Indigo 500 */
+    --color-primary-hover: #4f46e5; /* Indigo 600 */
+    --color-primary-light: #818cf8; /* Indigo 400 */
+    --color-primary-dark: #3730a3; /* Indigo 800 */
+    
+    --color-secondary: #8b5cf6; /* Violet 500 */
+    --color-secondary-hover: #7c3aed; /* Violet 600 */
+    
+    --color-success: #10b981;
+    --color-warning: #f59e0b;
+    --color-error: #f43f5e;
+  }
+
+  .dark {
+    color-scheme: dark;
+    --color-background: #09090b; /* Zinc 950 */
+    --color-surface: #18181b; /* Zinc 900 */
+    --color-surface-highlight: #27272a; /* Zinc 800 */
+    --color-surface-border: #3f3f46; /* Zinc 700 */
+    
+    --color-content: #f8fafc; /* Slate 50 */
+    --color-content-muted: #94a3b8; /* Slate 400 */
+    
+    --color-primary: #6366f1; /* Indigo 500 */
+    --color-primary-hover: #4f46e5; /* Indigo 600 */
+    --color-primary-light: #818cf8; /* Indigo 400 */
+    --color-primary-dark: #3730a3; /* Indigo 800 */
+    
+    --color-secondary: #8b5cf6; /* Violet 500 */
+    --color-secondary-hover: #7c3aed; /* Violet 600 */
+    
+    --color-success: #10b981;
+    --color-warning: #f59e0b;
+    --color-error: #f43f5e;
+  }
+
+  body {
+    @apply bg-background text-content font-sans antialiased transition-colors duration-300;
+  }
+  
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-surface-border rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-content-muted;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-surface/80 backdrop-blur-md border border-surface-border/50 rounded-xl shadow-lg transition-colors duration-300;
+  }
+  .glass-panel {
+    @apply bg-surface-highlight/50 backdrop-blur-sm border border-surface-border/30 rounded-lg transition-colors duration-300;
+  }
+}
